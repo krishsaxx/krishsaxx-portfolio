@@ -1,0 +1,454 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Krish Saxena</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Krish Saxena: robotics engineering student at WPI. Project portfolio: TI-84 Plus CE mechanical keyboard, 2.1 channel speaker, GPU mining rig, RADAR + LIDAR research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: barebones single column, rootkid-style. Logo, lowercase nav, plain text and plain images. No cards, no motion. */
+:root {
+  --bg: #d3d5c9;
+  --fg: #22261f;
+  --muted: #5b6055;
+  --line: #b7baab;
+  --accent: #7e4a26;
+  --drawing: none;
+  --shade: rgba(20, 26, 32, .85);
+  --font-body: "PT Serif", Georgia, "Times New Roman", serif;
+  --col: 42rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1e231f; --fg: #d8d5c8; --muted: #959a8c; --line: #363d36; --accent: #d39c6b;
+    --drawing: invert(.9) hue-rotate(180deg) contrast(.9); --shade: rgba(8, 11, 14, .9);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1e231f; --fg: #d8d5c8; --muted: #959a8c; --line: #363d36; --accent: #d39c6b;
+  --drawing: invert(.9) hue-rotate(180deg) contrast(.9); --shade: rgba(8, 11, 14, .9);
+  color-scheme: dark;
+}
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: var(--col); margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+  padding-block: 2.5rem 3rem;
+}
+a { color: inherit; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header { margin-bottom: 3rem; }
+.logo { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 700; }
+.logo svg { width: 32px; height: 32px; flex: none; }
+.logo .cap-top { fill: var(--bg); stroke: var(--fg); }
+.logo .cap-skirt { fill: var(--fg); }
+.logo .cap-txt { fill: var(--fg); font-family: var(--font-body); font-weight: 700; }
+.logo:hover { color: var(--fg); }
+nav.main { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; margin-top: .9rem; }
+nav.main a { color: var(--muted); text-decoration: none; }
+nav.main a:hover { color: var(--fg); }
+nav.main a[aria-current="page"] { color: var(--fg); text-decoration: underline; }
+.theme-btn { appearance: none; background: none; border: 0; padding: 0; font: inherit; color: var(--muted); cursor: pointer; }
+.theme-btn:hover { color: var(--fg); }
+
+h1, h2 { font-weight: 700; line-height: 1.25; margin: 0; text-wrap: balance; }
+h1 { font-size: 1.6rem; margin-bottom: .4rem; }
+h2 { font-size: 1.0625rem; margin: 2.5rem 0 .6rem; }
+p { margin: 0 0 1rem; }
+ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+li { margin-bottom: .2rem; }
+.muted { color: var(--muted); }
+.materials { color: var(--muted); margin-bottom: 2rem; }
+
+figure { margin: 0 0 2rem; }
+figure img { display: block; max-width: 100%; height: auto; cursor: zoom-in; }
+figure img.drawing { filter: var(--drawing); }
+figcaption { color: var(--muted); font-size: .95rem; margin-top: .45rem; }
+
+.works-year { margin: 0 0 1.75rem; }
+.works-year h2 { margin: 0 0 .35rem; }
+.works-year ul { list-style: none; padding: 0; margin: 0; }
+.works-year li { display: flex; gap: 1rem; }
+.works-year .when { color: var(--muted); min-width: 5.5rem; flex: none; }
+@media (max-width: 420px) { .works-year li { flex-direction: column; gap: 0; } }
+
+.diagram { overflow-x: auto; margin: 1rem 0 .5rem; }
+.diagram svg { display: block; min-width: 600px; width: 100%; height: auto; }
+.diagram .ln { stroke: var(--line); stroke-width: 1.5; }
+.diagram .ln.on { stroke: var(--accent); stroke-width: 2.5; }
+.diagram .node { fill: var(--bg); stroke: var(--muted); stroke-width: 1.2; cursor: pointer; }
+.diagram .node.on { fill: var(--accent); stroke: var(--accent); }
+.diagram text { fill: var(--muted); font-family: var(--font-body); font-size: 12px; }
+.diagram text.lbl-on { fill: var(--accent); }
+.diagram .box { fill: none; stroke: var(--muted); stroke-width: 1; }
+.diagram .bt { fill: var(--fg); font-size: 13px; font-weight: 700; }
+.diagram .bs { fill: var(--muted); font-size: 11.5px; }
+.diagram .arrow { stroke: var(--muted); stroke-width: 1.2; fill: none; }
+.diagram .arrowhead { fill: var(--muted); }
+.diagram .readout { fill: var(--accent); font-size: 12px; }
+
+.table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+table { border-collapse: collapse; font-size: .97rem; }
+th, td { text-align: left; padding: .2rem 1.5rem .2rem 0; white-space: nowrap; font-weight: 400; }
+th { color: var(--muted); }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 0; }
+
+.link-btn { appearance: none; background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; cursor: pointer; }
+.link-btn:hover { color: var(--accent); }
+.select { user-select: all; }
+
+footer { margin-top: 4rem; color: var(--muted); font-size: .95rem; }
+
+dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; margin: 0; }
+dialog.lightbox::backdrop { background: var(--shade); }
+.lb-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .7rem; box-sizing: border-box; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.lb-inner img { max-width: 100%; max-height: calc(100% - 4rem); object-fit: contain; }
+.lb-inner p { color: #e9e6e0; font-size: .95rem; max-width: 42rem; text-align: center; margin: 0; }
+.lb-close { position: absolute; top: max(14px, env(safe-area-inset-top, 0px)); right: max(14px, env(safe-area-inset-right, 0px)); appearance: none; border: 0; background: none; color: #fff; font: inherit; text-decoration: underline; cursor: pointer; }
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="logo" href="#home" aria-label="Krish Saxena, home">
+      <span>Krish Saxena</span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#home" data-nav="home">home</a>
+      <a href="#works" data-nav="works">works</a>
+      <button class="theme-btn" id="theme-toggle" type="button">dark</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="view" data-view="home" aria-label="Home">
+      <p>I'm a robotics engineering student at Worcester Polytechnic Institute, class of 2028, from Monroe Township, New Jersey. I design hardware in SolidWorks and KiCad and write code in Python, C++ and MATLAB. Past projects include a TI-84 calculator rebuilt around a custom PCB with mechanical switches, a 2.1 channel speaker, and a six-GPU mining rig. Write-ups for each are under <a href="#works">works</a>.</p>
+      <p>Please direct all inquiries to: <span class="select">krishsaxx@gmail.com</span></p>
+      <p>Phone: <span class="select">(609) 598-1193</span><br>
+      GitHub: <a href="https://github.com/krishsaxx" target="_blank" rel="noopener">github.com/krishsaxx</a><br>
+      Résumé: <button class="link-btn" type="button" id="resume-btn">download (PDF)</button> <span class="muted" id="dl-status" aria-live="polite"></span></p>
+
+      <h2>Background</h2>
+      <p>B.S. Robotics Engineering, Worcester Polytechnic Institute, expected 2028. 3.8 GPA, Dean's List.</p>
+      <ul>
+        <li>Data Analysis &amp; Research Intern, OSG Analytics, summer 2026</li>
+        <li>Autonomous Fruit-Harvesting Robot, WPI, spring 2026</li>
+        <li>Research Intern, Imaging &amp; Sensing Lab, Temple University, summer 2024 (<a href="#radar-lidar">project</a>)</li>
+        <li>Team Leader, VEX Robotics Club, 2022–2025</li>
+      </ul>
+      <p class="muted">Python, C++, Java, MATLAB, SolidWorks, KiCad, Arduino.</p>
+    </section>
+
+    <!-- WORKS -->
+    <section class="view" data-view="works" aria-label="Works" hidden>
+      <div class="works-year"><h2>2026</h2><ul>
+        <li><span class="when">Summer</span><a href="#speaker">2.1 Channel Speaker (2026)</a></li>
+      </ul></div>
+      <div class="works-year"><h2>2024</h2><ul>
+        <li><span class="when">Jun – Aug</span><a href="#radar-lidar">RADAR + LIDAR Object Detection (2024)</a></li>
+      </ul></div>
+      <div class="works-year"><h2>2022</h2><ul>
+        <li><span class="when">Feb – Apr</span><a href="#ti84-keyboard">TI-84 Plus CE Mechanical Keyboard (2022)</a></li>
+      </ul></div>
+      <div class="works-year"><h2>2021</h2><ul>
+        <li><span class="when">2021 – 22</span><a href="#mining-rig">GPU Mining Rig (2021–22)</a></li>
+      </ul></div>
+    </section>
+
+    <!-- TI-84 KEYBOARD -->
+    <article class="view" data-view="ti84-keyboard" aria-label="TI-84 Plus CE Mechanical Keyboard" hidden>
+      <h1>TI-84 Plus CE Mechanical Keyboard (2022)</h1>
+      <p class="materials">Custom KiCad PCB, mechanical keyboard switches, 3D-printed case and screen bezel, TI-84 Plus CE keypad board, screen and battery.</p>
+
+      <figure>
+        <img src="img/kb-final.jpg" alt="Finished calculator with mechanical switches and the original TI-84 screen in a printed bezel" width="1600" height="1225" data-full="img/kb-final.jpg" data-caption="Switches installed, the original screen running in its printed bezel.">
+      </figure>
+
+      <p>A TI-84 Plus CE, rebuilt as a mechanical keyboard. Every key press goes through a mechanical switch on a circuit board I designed, but the calculator itself is unchanged underneath: its own processor, its original screen, its original rechargeable battery.</p>
+      <p>This is the project I'm proudest of because it needed three disciplines at once. The PCB had to be laid out in KiCad, the case and bezel had to be modeled in CAD around that board and the calculator's parts, and the two had to be joined electrically by hand-soldering into the calculator's keypad.</p>
+
+      <h2>How a key press reaches the calculator</h2>
+      <p>The calculator doesn't read each key on its own wire. Its keys sit on a grid of row and column lines, and pressing a key connects one row to one column. The calculator scans the grid and works out which key was pressed from that pair. The TI-84 Plus CE's keypad board has exposed, solderable pads for these lines.</p>
+      <p>My PCB rebuilds that same grid with mechanical switches and brings every line out to one pin header, labeled on the silkscreen as r1–r7 and c1–c8, plus a separate pair for the ON key, which sits outside the matrix. Wires run from the header to the matching pads, so the calculator scans the new switches exactly as it scanned its original keys.</p>
+      <div class="diagram" role="group" aria-label="Key matrix diagram">
+        <svg id="matrix-svg" viewBox="0 0 860 300" aria-hidden="true"></svg>
+      </div>
+      <p class="muted">Pick any switch in the grid to see which row and column lines it connects.</p>
+
+      <figure>
+        <img src="img/kb-schematic.jpg" alt="KiCad schematic of the switch matrix" width="942" height="609" data-full="img/kb-schematic.jpg" data-caption="Schematic in KiCad: the switch grid with its row and column nets.">
+        <figcaption>Schematic in KiCad: the switch grid with its row and column nets.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/kb-render.jpg" alt="3D render of the L-shaped PCB with pin header" width="1369" height="707" data-full="img/kb-render.jpg" data-caption="3D render of the board. The L-shape leaves room for the screen; the header carries every row, column and the ON pair.">
+        <figcaption>3D render of the board. The L-shape leaves room for the screen; the header carries every row, column and the ON pair.</figcaption>
+      </figure>
+
+      <h2>Case and bezel</h2>
+      <p>The case and screen bezel were modeled in CAD around three things that couldn't move: the PCB's switch positions, the original TI-84 screen, and the calculator's battery. The battery stays inside and connected, so the finished build still charges like a normal TI-84. Parts were printed on a Prusa printer and test-fitted against the plate and board before wiring.</p>
+
+      <h2>Build log</h2>
+      <figure><img src="img/kb-printer.jpg" alt="Prusa 3D printer printing a case part" width="312" height="234" data-full="img/kb-printer.jpg" data-caption="16 Feb 2022. Printing the first case parts."><figcaption>16 Feb 2022. Printing the first case parts.</figcaption></figure>
+      <figure><img src="img/kb-case-print.jpg" alt="Grey printed case tray" width="293" height="220" data-full="img/kb-case-print.jpg" data-caption="17 Feb 2022. First print of the case tray."><figcaption>17 Feb 2022. First print of the case tray, with mounts for the calculator's internals.</figcaption></figure>
+      <figure><img src="img/kb-plate.jpg" alt="L-shaped switch hole pattern on a cutting mat" width="142" height="189" data-full="img/kb-plate.jpg" data-caption="8 Mar 2022. Checking the outline and hole pattern at full scale."><figcaption>8 Mar 2022. Checking the L-shaped outline and switch hole pattern at full scale.</figcaption></figure>
+      <figure><img src="img/kb-case.jpg" alt="Assembled case and plate with empty switch cutouts" width="1600" height="1200" data-full="img/kb-case.jpg" data-caption="8 Mar 2022. Case, plate and bezel assembled, ready for switches."><figcaption>8 Mar 2022. Case, plate and bezel assembled, ready for switches.</figcaption></figure>
+      <figure><img src="img/kb-wiring.jpg" alt="TI-84 keypad board with wires soldered to its pads" width="1129" height="1505" data-full="img/kb-wiring.jpg" data-caption="23 Mar 2022. Soldering wires from the PCB header to the TI-84's keypad pads."><figcaption>23 Mar 2022. Soldering wires from the PCB header to the row and column pads on the TI-84's keypad board.</figcaption></figure>
+      <figure><img src="img/kb-layout.jpg" alt="KiCad PCB layout of the switch grid" width="317" height="167" data-full="img/kb-layout.jpg" data-caption="PCB layout in KiCad."><figcaption>PCB layout in KiCad, routing every switch back to the header.</figcaption></figure>
+      <figure><img src="img/kb-keycaps.jpg" alt="Finished calculator with green and white keycaps" width="305" height="169" data-full="img/kb-keycaps.jpg" data-caption="6 Apr 2022. Keycaps on. Finished."><figcaption>6 Apr 2022. Keycaps on. Finished.</figcaption></figure>
+
+      <h2>What it took</h2>
+      <ul>
+        <li>Mapping the TI-84 Plus CE's row and column pads</li>
+        <li>Schematic capture and PCB layout in KiCad</li>
+        <li>Case and bezel CAD around fixed parts</li>
+        <li>3D printing and test-fitting</li>
+        <li>Fine-pitch hand soldering onto the keypad board</li>
+      </ul>
+
+      <p class="muted">Next: <a href="#speaker">2.1 Channel Speaker (2026)</a></p>
+    </article>
+
+    <!-- SPEAKER -->
+    <article class="view" data-view="speaker" aria-label="2.1 Channel Speaker" hidden>
+      <h1>2.1 Channel Speaker (2026)</h1>
+      <p class="materials">15/32" plywood, Dayton Audio SD215A-88 8" subwoofer, two SB Acoustics 3" full-range drivers, TPA3116D2 2.1 amplifier board, 24 V 6 A supply, ~150 Hz bass blockers.</p>
+
+      <figure>
+        <img src="img/sp-final.jpg" alt="Finished plywood speaker cabinet with two front drivers on short legs" width="824" height="647" data-full="img/sp-final.jpg" data-caption="The finished speaker.">
+      </figure>
+
+      <p>A powered 2.1 speaker for the house, built for under $300 with a jigsaw, a circular saw and cutting guides. A down-firing 8-inch subwoofer sits in a sealed lower chamber; two full-range drivers sit up front in their own sealed boxes; the amplifier and wiring live behind a magnetic rear panel.</p>
+      <p>Next to a JBL Xtreme 5, it has far more bass and clearer vocals, mostly because of the drivers. The bass was strong enough that it had to be turned down to blend with the front drivers.</p>
+
+      <h2>Design</h2>
+      <p>The cabinet is 18.5 × 11.5 × 10 inches, split into three sections.</p>
+      <ul>
+        <li>Lower sub chamber: sealed. The Dayton 8" fires down into the gap under the cabinet. Internal dowels brace it against vibration.</li>
+        <li>Front driver boxes: each SB Acoustics driver has its own small sealed box, so the sub's pressure can't push on the small cones. Bass blockers cut their low end at about 150 Hz.</li>
+        <li>Rear electronics bay: amp board, barrel jack and 3.5 mm input behind a magnet-mounted service panel, so repairs never mean opening the sub chamber.</li>
+      </ul>
+      <figure>
+        <img class="drawing" src="img/sp-drawing.png" alt="SolidWorks drawing of the speaker box with front, side, top and isometric views, dimensions in inches" width="1800" height="985" data-full="img/sp-drawing.png" data-caption="Box_rev1 drawing in SolidWorks. Dimensions in inches.">
+        <figcaption>Box_rev1 in SolidWorks, inches.</figcaption>
+      </figure>
+
+      <h2>The Raspberry Pi that didn't make it</h2>
+      <p>The first plan was an all-in-one media center: a Raspberry Pi inside the cabinet, powered from the same barrel jack through a buck converter, with a now-playing screen. I wrote that screen in Python with Spotipy and CustomTkinter. It showed album art, track, artist, progress and playback controls over a gradient taken from the album art's colors.</p>
+      <p>Running Spotify locally on the Pi turned out not to be practical, so I cut it. The final build is simpler, more reliable and easier to carry.</p>
+      <figure>
+        <img src="img/sp-circuit.jpg" alt="Hand-drawn wiring diagram, iteration 1" width="1600" height="653" data-full="img/sp-circuit.jpg" data-caption="Speaker wiring, iteration #1.">
+        <figcaption>Wiring, iteration #1: the 24 V supply split to the amp and, through a buck converter, to the Pi.</figcaption>
+      </figure>
+
+      <h2>Build log</h2>
+      <figure><img src="img/sp-panels.jpg" alt="First plywood panels clamped together" width="1129" height="1505" data-full="img/sp-panels.jpg" data-caption="First panels cut and aligned to check for squareness."><figcaption>First panels cut and aligned to check for squareness.</figcaption></figure>
+      <figure><img src="img/sp-subhole.jpg" alt="Jigsaw cutting a circle in plywood" width="1129" height="1505" data-full="img/sp-subhole.jpg" data-caption="Cutting the lower subwoofer hole."><figcaption>Cutting the lower subwoofer hole.</figcaption></figure>
+      <figure><img src="img/sp-glue.jpg" alt="Enclosure sides clamped while glue sets" width="1129" height="1505" data-full="img/sp-glue.jpg" data-caption="Gluing the four sides of the enclosure."><figcaption>Gluing the four sides of the enclosure.</figcaption></figure>
+      <figure><img src="img/sp-front.jpg" alt="Cabinet with front driver holes cut" width="1129" height="1505" data-full="img/sp-front.jpg" data-caption="Front panel cut and test-fit for the full-range drivers."><figcaption>Front panel cut and test-fit for the full-range drivers.</figcaption></figure>
+      <figure><img src="img/sp-chambers.jpg" alt="Open cabinet showing internal chambers and dowels" width="1129" height="1505" data-full="img/sp-chambers.jpg" data-caption="Driver boxes added, and dowels to brace the sub chamber."><figcaption>Driver boxes added, and dowels to brace the sub chamber.</figcaption></figure>
+      <figure><img src="img/sp-rear.jpg" alt="Rear service panel with magnets" width="1129" height="1505" data-full="img/sp-rear.jpg" data-caption="Sub chamber sealed; magnets set into the rear service panel."><figcaption>Sub chamber sealed; magnets set into the rear service panel.</figcaption></figure>
+      <figure><img src="img/sp-pi.jpg" alt="Workbench with amp board, buck converter and wiring" width="1129" height="1505" data-full="img/sp-pi.jpg" data-caption="Testing the amp and the buck converter for the Pi."><figcaption>Testing the amp and the buck converter for the Pi.</figcaption></figure>
+
+      <h2>What I learned</h2>
+      <ul>
+        <li>Sealed enclosure design and construction</li>
+        <li>Driver wiring and polarity</li>
+        <li>Passive high-pass filtering with bass blockers</li>
+        <li>Strain relief, and chasing down rattles and air leaks</li>
+        <li>Cutting features to keep a build reliable</li>
+      </ul>
+
+      <p>Source and CAD: <a href="https://github.com/krishsaxx/2.1-Channel-Speaker-2026" target="_blank" rel="noopener">github.com/krishsaxx/2.1-Channel-Speaker-2026</a></p>
+      <p class="muted">Next: <a href="#radar-lidar">RADAR + LIDAR Object Detection (2024)</a></p>
+    </article>
+
+    <!-- RADAR LIDAR -->
+    <article class="view" data-view="radar-lidar" aria-label="RADAR and LIDAR Object Detection" hidden>
+      <h1>RADAR + LIDAR Object Detection (2024)</h1>
+      <p class="materials">Research internship, Imaging &amp; Sensing Lab, Temple University, Philadelphia. Python, MATLAB.</p>
+      <p>LIDAR gives precise, dense geometry but degrades in rain, fog and snow. RADAR is coarse but keeps working in bad weather. Over a summer at Temple's Imaging &amp; Sensing Lab I worked on combining the two so an object detector could stay accurate across weather conditions.</p>
+      <p>I wrote signal processing in Python and MATLAB, including beamforming and noise reduction, to clean up the sensor returns before fusion. I then scaled the detection pipeline to handle denser point clouds: by combining returns from both sensors, throughput went from 300,000 to 600,000 points per second.</p>
+      <p class="muted">Next: <a href="#mining-rig">GPU Mining Rig (2021–22)</a></p>
+    </article>
+
+    <!-- MINING RIG -->
+    <article class="view" data-view="mining-rig" aria-label="GPU Mining Rig" hidden>
+      <h1>GPU Mining Rig (2021–22)</h1>
+      <p class="materials">Open-air frame, six ZOTAC RTX 3070 / 3070 Ti / 3080 cards, EVGA power supply, PCIe risers, rack-mount UPS, dedicated 20 A circuit, Hive OS, Hiveon Pool.</p>
+
+      <figure>
+        <img src="img/cr-frame.jpg" alt="Open-air mining frame with GPUs mounted and power supply below" width="562" height="253" data-full="img/cr-frame.jpg" data-caption="The open-air frame mid-build.">
+      </figure>
+
+      <p>An Ethereum mining rig built with a friend during the 2021 crypto boom, while Ethereum was still proof-of-work. The hardest part was getting cards at all: GPUs were scarce, so we set up an automated alert service that pinged us when specific cards were listed, and bought new and used cards the moment they appeared. Roughly a dozen cards, about $5,000 in hardware.</p>
+      <p>The rig ran on Hive OS, managed remotely, and mined through Hiveon Pool for steady payouts. It held around 344 MH/s on the rig (393.71 MH/s reported by the pool) with cards between 37 and 64 °C. It ran until the Merge in September 2022, when Ethereum moved to proof-of-stake and GPU mining ended.</p>
+
+      <h2>Tuning</h2>
+      <p>Ethereum's hashing depends on memory speed far more than core speed, so each card got raised memory clocks with lowered core clocks and power limits. Cards were tuned one by one, several were flashed with custom VBIOSes for tighter memory timings, and software got the LHR (Lite Hash Rate) cards close to their full rate.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>GPU</th><th>Card</th><th>Memory</th><th class="n">MH/s</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>RTX 3070 Ti, 8 GB</td><td>Micron GDDR6X</td><td class="n">40.50</td></tr>
+            <tr><td>1</td><td>RTX 3070, 8 GB</td><td>Samsung GDDR6</td><td class="n">31.36</td></tr>
+            <tr><td>2</td><td>RTX 3070 Ti, 8 GB</td><td>Micron GDDR6X</td><td class="n">39.69</td></tr>
+            <tr><td>3</td><td>RTX 3070 Ti, 8 GB</td><td>Micron GDDR6X</td><td class="n">38.99</td></tr>
+            <tr><td>4</td><td>RTX 3080, 10 GB</td><td>Micron GDDR6X</td><td class="n">45.94</td></tr>
+            <tr><td>5</td><td>RTX 3070, 8 GB</td><td>Samsung GDDR6</td><td class="n">30.71</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Power</h2>
+      <p>At roughly 2,000 W the rig was too much for a normal household circuit. We ran a dedicated line and moved it from a 15 A to a 20 A breaker, then added a rack-mount UPS so short outages wouldn't crash the rig.</p>
+
+      <h2>Build log</h2>
+      <figure><img src="img/cr-gpus.jpg" alt="Graphics cards laid out on the floor" width="488" height="220" data-full="img/cr-gpus.jpg" data-caption="The cards laid out before installation."><figcaption>The cards laid out before installation.</figcaption></figure>
+      <figure><img src="img/cr-top.jpg" alt="Top view of the rig" width="221" height="166" data-full="img/cr-top.jpg" data-caption="Top view, cards installed and connected."><figcaption>Top view, cards installed and connected.</figcaption></figure>
+      <figure><img src="img/cr-wiring.jpg" alt="Close-up of rig cabling" width="124" height="166" data-full="img/cr-wiring.jpg" data-caption="Each card needs its own power and data runs."><figcaption>Each card needs its own power and data runs.</figcaption></figure>
+      <figure><img src="img/cr-terminal.jpg" alt="Hive OS terminal listing GPUs" width="165" height="220" data-full="img/cr-terminal.jpg" data-caption="Terminal check: every GPU detected."><figcaption>Terminal check: every GPU detected.</figcaption></figure>
+      <figure><img src="img/cr-hive-gpus.jpg" alt="Hive OS GPU list" width="1024" height="460" data-full="img/cr-hive-gpus.jpg" data-caption="Per-card hash rate, temperatures and power limits in Hive OS."><figcaption>Per-card hash rate, temperatures and power limits in Hive OS.</figcaption></figure>
+      <figure><img src="img/cr-dashboard.jpg" alt="Hive OS dashboard graphs" width="886" height="1505" data-full="img/cr-dashboard.jpg" data-caption="Hive OS dashboard: 344.0 MH/s on the rig, 393.71 MH/s at the pool."><figcaption>Hive OS dashboard: a flat hash-rate graph, meaning tuning, cooling and power were all holding.</figcaption></figure>
+
+      <p>Full write-up: <a href="https://github.com/krishsaxx/Cryptocurrency-Mining-Rig-2022" target="_blank" rel="noopener">github.com/krishsaxx/Cryptocurrency-Mining-Rig-2022</a></p>
+      <p class="muted">Next: <a href="#ti84-keyboard">TI-84 Plus CE Mechanical Keyboard (2022)</a></p>
+    </article>
+
+  </main>
+
+  <footer>© 2026 Krish Saxena</footer>
+</div>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+  <div class="lb-inner" id="lb-inner">
+    <button class="lb-close" type="button" id="lb-close">close</button>
+    <img id="lb-img" src="" alt="">
+    <p id="lb-cap"></p>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  /* theme */
+  var root = document.documentElement, tBtn = document.getElementById('theme-toggle');
+  try { var saved = localStorage.getItem('ks-theme'); if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved); } catch (e) {}
+  function current() { return root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  function label() { tBtn.textContent = current() === 'dark' ? 'light' : 'dark'; }
+  tBtn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ks-theme', next); } catch (e) {}
+    label();
+  });
+  label();
+
+  /* routing */
+  var views = Array.prototype.slice.call(document.querySelectorAll('[data-view]'));
+  var names = views.map(function (v) { return v.getAttribute('data-view'); });
+  var projects = ['ti84-keyboard', 'speaker', 'radar-lidar', 'mining-rig'];
+  var first = true;
+  function route() {
+    var name = (location.hash || '').replace('#', '');
+    if (names.indexOf(name) === -1) name = 'home';
+    views.forEach(function (v) { v.hidden = v.getAttribute('data-view') !== name; });
+    var navKey = projects.indexOf(name) > -1 ? 'works' : name;
+    document.querySelectorAll('[data-nav]').forEach(function (a) {
+      if (a.getAttribute('data-nav') === navKey) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    if (!first) window.scrollTo(0, 0);
+    first = false;
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  /* matrix diagram */
+  var svg = document.getElementById('matrix-svg'), NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, text) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; svg.appendChild(e); return e; }
+  var ROWS = 7, COLS = 8, x0 = 60, y0 = 40, dx = 34, dy = 30;
+  var rowLines = [], colLines = [], rowLbl = [], colLbl = [], nodes = [], r, c;
+  for (r = 0; r < ROWS; r++) {
+    rowLines.push(el('line', { class: 'ln', x1: x0 - 14, y1: y0 + r * dy, x2: x0 + (COLS - 1) * dx + 14, y2: y0 + r * dy }));
+    rowLbl.push(el('text', { x: x0 - 22, y: y0 + r * dy + 4, 'text-anchor': 'end' }, 'r' + (r + 1)));
+  }
+  for (c = 0; c < COLS; c++) {
+    colLines.push(el('line', { class: 'ln', x1: x0 + c * dx, y1: y0 - 14, x2: x0 + c * dx, y2: y0 + (ROWS - 1) * dy + 14 }));
+    colLbl.push(el('text', { x: x0 + c * dx, y: y0 + (ROWS - 1) * dy + 32, 'text-anchor': 'middle' }, 'c' + (c + 1)));
+  }
+  for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++) {
+    var n = el('rect', { class: 'node', x: x0 + c * dx - 7, y: y0 + r * dy - 7, width: 14, height: 14, rx: 3 });
+    n.dataset.r = r; n.dataset.c = c; nodes.push(n);
+  }
+  var readout = el('text', { class: 'readout', x: x0 - 22, y: 22 }, '');
+  var positions = [[400, 40], [400, 120], [400, 200], [620, 120]];
+  var labels = [['Custom PCB', 'switches on a row/col grid'], ['Pin header', 'r1–r7 · c1–c8 · ON'], ['TI-84 keypad pads', 'wires soldered by hand'], ['TI-84 Plus CE', 'scans matrix · original screen + battery']];
+  positions.forEach(function (p, i) {
+    el('rect', { class: 'box', x: p[0], y: p[1], width: i === 3 ? 210 : 172, height: 54 });
+    el('text', { class: 'bt', x: p[0] + 12, y: p[1] + 22 }, labels[i][0]);
+    el('text', { class: 'bs', x: p[0] + 12, y: p[1] + 40 }, labels[i][1]);
+  });
+  function arrow(x1, y1, x2, y2) {
+    el('path', { class: 'arrow', d: 'M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 });
+    var ang = Math.atan2(y2 - y1, x2 - x1), s = 6;
+    el('path', { class: 'arrowhead', d: 'M' + x2 + ' ' + y2 + ' L' + (x2 - s * Math.cos(ang - .45)) + ' ' + (y2 - s * Math.sin(ang - .45)) + ' L' + (x2 - s * Math.cos(ang + .45)) + ' ' + (y2 - s * Math.sin(ang + .45)) + ' Z' });
+  }
+  arrow(x0 + (COLS - 1) * dx + 24, 67, 396, 67);
+  arrow(486, 94, 486, 118);
+  arrow(486, 174, 486, 198);
+  arrow(574, 227, 640, 176);
+  function select(rr, cc) {
+    nodes.forEach(function (nd) { nd.classList.toggle('on', +nd.dataset.r === rr && +nd.dataset.c === cc); });
+    rowLines.forEach(function (l, i) { l.classList.toggle('on', i === rr); });
+    colLines.forEach(function (l, i) { l.classList.toggle('on', i === cc); });
+    rowLbl.forEach(function (l, i) { l.classList.toggle('lbl-on', i === rr); });
+    colLbl.forEach(function (l, i) { l.classList.toggle('lbl-on', i === cc); });
+    readout.textContent = 'switch pressed: r' + (rr + 1) + ' connects to c' + (cc + 1);
+  }
+  nodes.forEach(function (nd) {
+    nd.addEventListener('mouseenter', function () { select(+nd.dataset.r, +nd.dataset.c); });
+    nd.addEventListener('click', function () { select(+nd.dataset.r, +nd.dataset.c); });
+  });
+  select(2, 4);
+
+  /* lightbox */
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-full]');
+    if (!t) return;
+    lbImg.src = t.getAttribute('data-full');
+    lbImg.alt = t.getAttribute('alt') || '';
+    lbCap.textContent = t.getAttribute('data-caption') || '';
+    if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
+  });
+  function closeLb() { if (lb.close) lb.close(); else lb.removeAttribute('open'); }
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-inner').addEventListener('click', function (e) { if (e.target.id === 'lb-inner') closeLb(); });
+
+  /* resume download */
+  var rBtn = document.getElementById('resume-btn'), rStatus = document.getElementById('dl-status');
+  var downloadsP = (window.claude && window.claude.use) ? window.claude.use('downloads') : Promise.resolve(null);
+  var fallbackMsg = 'not available here, email for a copy';
+  rBtn.addEventListener('click', function () {
+    rStatus.textContent = '';
+    Promise.all([downloadsP, fetch('Krish-Saxena-Resume.pdf').then(function (r) { if (!r.ok) throw new Error('fetch'); return r.blob(); })])
+      .then(function (res) {
+        var dl = res[0], blob = res[1];
+        if (!dl) { rStatus.textContent = fallbackMsg; return; }
+        return dl.save({ filename: 'Krish-Saxena-Resume.pdf', data: blob }).then(function () { rStatus.textContent = 'saved'; },
+          function (err) { rStatus.textContent = err && err.code === 'declined' ? '' : fallbackMsg; });
+      })
+      .catch(function () { rStatus.textContent = fallbackMsg; });
+  });
+})();
+</script>
+
+</body></html>
